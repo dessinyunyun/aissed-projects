@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  background-color: #e7e7e7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.nav-menu > ul > li {
+  font-size: 1.2vw;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.grey-hero {
+  font-weight: 700;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #e7e7e7;
+  margin-top: -5px;
+}
+
+.name-title {
+  font-size: clamp(13px, 1.8vw, 24px);
+}
+
+.web-title {
+  font-size: 8.8vw;
+  margin-top: -5%;
+}
+
+.javascript-hero-title {
+  font-size: clamp(30px, 3vw, 60px);
+}
+
+.javascript-hero-desc {
+  font-size: 1.3vw;
 }
