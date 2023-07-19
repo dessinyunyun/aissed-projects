@@ -11,7 +11,7 @@ const page = () => {
         <h2 className="web-title font-bold tracking-[0.1em] -my-3">WEB DEVELOPER</h2>
       </div>
       <div className="main-div bg-main lg:h-1/4 w-full p-4 lg:p-4 lg:flex">
-        <div className="grey-box bg-grey w-full rounded-md lg:rounded-r-2xl lg:w-2/5 h-32 lg:h-full mb-8 lg:mr-5 flex items-center justify-center">
+        <div className="grey-box bg-grey w-full rounded-md lg:rounded-r-2xl lg:rounded-l-none lg:w-2/5 h-32 lg:h-full mb-8 lg:mr-5 flex items-center justify-center">
           <div className="grey-hero font-neuebit text-5xl ">
             <Typewriter
               options={{
