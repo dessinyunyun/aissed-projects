@@ -7,7 +7,7 @@ html {
 }
 
 .nav-menu > ul > li {
-  font-size: clamp(15px, 1vw, 22px);
+  font-size: clamp(14px, 0.5vw, 24px);
 }
 
 .grey-hero {

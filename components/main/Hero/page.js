@@ -31,7 +31,7 @@ const page = () => {
         </div>
       </div>
       <div className="barcode w-full flex flex-col items-end">
-        <Image src={"/hero-barcode.png"} width={150} height={50} alt="Picture of the author" />
+        <Image src={"/hero-barcode.png"} width={150} height={0} alt="Picture of the author" />
         <p className="-mt-3">@2023</p>
       </div>
     </div>
