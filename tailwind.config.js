@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         main: "#FC6D1D",
         grey: "#E7E7E7",
+        dark: "#0F0F0F",
       },
       fontFamily: {
         neuebit: ["var(--neue-bit)"],

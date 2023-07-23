@@ -3,33 +3,5 @@
 @tailwind utilities;
 
 html {
-  background-color: #e7e7e7;
-}
-
-.nav-menu > ul > li {
-  font-size: clamp(14px, 0.5vw, 24px);
-}
-
-.grey-hero {
-  font-weight: 700;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  color: #e7e7e7;
-  margin-top: -5px;
-}
-
-.name-title {
-  font-size: clamp(15px, 1.5vw, 28px);
-}
-
-.web-title {
-  font-size: 8.8vw;
-  margin-top: clamp(-10%, 50vw, -5%);
-}
-
-.javascript-hero-title {
-  font-size: clamp(30px, 3vw, 60px);
-}
-
-.javascript-hero-desc {
-  font-size: 1.3vw;
+  background-color: #0f0f0f;
 }

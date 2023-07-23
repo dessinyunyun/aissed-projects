@@ -21,11 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${neuebit.variable} ${NeueMontreal.variable}`}>
-        <div className="contain flex justify-center w-full font-regular">
-          <Navbar />
-          {children}
-        </div>
+      <body className={`${neuebit.variable} ${NeueMontreal.variable} flex justify-center`}>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

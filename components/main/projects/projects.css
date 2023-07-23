@@ -1,0 +1,54 @@
+.title-box-portofolio {
+  font-size: clamp(40px, 5vw, 50px);
+  font-weight: 700;
+}
+
+.running-text {
+  animation: runningAnimation 10s linear infinite;
+}
+
+.running-text-2 {
+  animation: runningAnimation2 10s linear infinite;
+  animation-delay: 5s; /* Tambahkan waktu delay 1 detik */
+}
+
+.portofolio-text-empty {
+  text-shadow: -1px -1px 0 #0f0f0f, 1px -1px 0 #0f0f0f, -1px 1px 0 #0f0f0f, 1px 1px 0 #0f0f0f;
+  color: #fc6d1d;
+}
+
+.main-text-portofolio {
+  font-size: clamp(3px, 0.5vw, 18px);
+}
+
+.project-cards {
+  height: 75vh;
+}
+
+/* ------------------------------------------------ ANIMATE ---------------------------------------------------- */
+@keyframes runningAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes runningAnimation2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0; /* Pada awal animasi, tetap tidak terlihat */
+  }
+  100% {
+    opacity: 1; /* Pada akhir animasi (setelah delay selesai), opacity diubah menjadi 1 sehingga elemen terlihat */
+  }
+}

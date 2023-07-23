@@ -1,0 +1,72 @@
+/* ------------------------------------------------ ABOUT ME ---------------------------------------------------- */
+
+.title-box-aboutme {
+  font-size: clamp(20px, 7vw, 50px);
+  font-weight: 700;
+}
+
+.running-text {
+  animation: runningAnimation 15s linear infinite;
+}
+
+.running-text-2 {
+  animation: runningAnimation2 15s linear infinite;
+  animation-delay: 8s; /* Tambahkan waktu delay 1 detik */
+}
+
+.image-aboutme {
+  width: clamp(30px, 4vw, 55px);
+  position: relative;
+  height: clamp(30px, 4vw, 55px);
+}
+
+.image-aboutme > img {
+  object-fit: cover;
+  animation: spin 5s linear infinite;
+}
+
+.aboutme-text-empty {
+  text-shadow: -1px -1px 0 #e7e7e7, 1px -1px 0 #e7e7e7, -1px 1px 0 #e7e7e7, 1px 1px 0 #e7e7e7;
+  color: #0f0f0f;
+}
+
+.main-text-aboutme {
+  font-size: clamp(0.5em, 3vw, 1em);
+}
+
+/* ------------------------------------------------ ANIMATE ---------------------------------------------------- */
+@keyframes runningAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes runningAnimation2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0; /* Pada awal animasi, tetap tidak terlihat */
+  }
+  100% {
+    opacity: 1; /* Pada akhir animasi (setelah delay selesai), opacity diubah menjadi 1 sehingga elemen terlihat */
+  }
+}
