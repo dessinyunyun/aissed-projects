@@ -25,6 +25,10 @@
   height: 75vh;
 }
 
+.Projects-container {
+  transform: translateY(50vh);
+}
+
 /* ------------------------------------------------ ANIMATE ---------------------------------------------------- */
 @keyframes runningAnimation {
   0% {
