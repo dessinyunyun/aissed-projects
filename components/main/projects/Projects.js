@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import "./projects.css";
 import Plx from "react-plx";
 
-const portofolio = () => {
+const Projects = () => {
   const parallaxWidth = [
     {
       start: ".Pposition",
@@ -98,26 +98,9 @@ const portofolio = () => {
       ],
     },
   ];
-  const parallaxPosition = [
-    // {
-    //   start: "self",
-    //   duration: "20vh",
-    //   properties: [
-    //     {
-    //       startValue: 0,
-    //       endValue: -50,
-    //       unit: "vh",
-    //       property: "translateY",
-    //     },
-    //   ],
-    // },
-  ];
-  const [scrollPosition, setScrollPosition] = useState(0);
+
   const [opacityRUnningText2, setOpacityRUnningText2] = useState("opacity-0");
 
-  // Fungsi untuk mengambil posisi scroll
-
-  // Menggunakan useEffect untuk mendengarkan event scroll
   useEffect(() => {
     setInterval(function () {
       setOpacityRUnningText2("opacity-1");
@@ -126,7 +109,7 @@ const portofolio = () => {
 
   // console.log(scrollPosition);
   return (
-    <Plx className="Pposition h-screen flex justify-center mt-92" parallaxData={parallaxPosition}>
+    <div className="Pposition h-screen flex justify-center mt-92">
       <Plx className="width overflow-hidden bg-grey Projects-container flex justify-center items-center fixed top-1/2" parallaxData={parallaxWidth}>
         {/* <Plx className="height" parallaxData={parallaxHeight}> */}
 
@@ -153,8 +136,8 @@ const portofolio = () => {
           </div>
         </div>
       </Plx>
-    </Plx>
+    </div>
   );
 };
 
-export default portofolio;
+export default Projects;

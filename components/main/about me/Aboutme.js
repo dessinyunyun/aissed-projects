@@ -31,7 +31,7 @@ const Aboutme = () => {
         <div className="title-box-aboutme text-grey border-2 tracking-[0.1em] border-grey w-10/12 m-auto p-1 font-neuebit overflow-hidden flex relative">
           <div className="running-text flex items-center gap-5 w-full  absolute">
             <p className="aboutme-text-empty">About Me</p>
-            <div class="image-aboutme">
+            <div className="image-aboutme">
               <Image className="" src={"/sun-logo-grey.png"} fill={true} />
             </div>
             <p className="">About Me</p>
@@ -44,7 +44,7 @@ const Aboutme = () => {
             <p className="">About Me</p>
           </div>
         </div>
-        <div class="main-text-aboutme p-6 mt-5 bg-grey w-10/12 m-auto ">
+        <div className="main-text-aboutme p-6 mt-5 bg-grey w-10/12 m-auto ">
           <p className="mb-2">
             I am a web developer with a strong background in website development. My degree in Information Systems has provided the foundation for my expertise in developing technological solutions. Additionally, I have completed a
             certified web developer training program facilitated by the government and successfully finished a boot camp that enhanced my knowledge and skills.
