@@ -4,7 +4,11 @@
 }
 
 .skills-title {
-  font-size: clamp(14px, 0.5vw, 24px);
+  font-size: clamp(14px, 3vw, 24px);
+}
+
+.skilss-title-image-contain > img {
+  animation: spin 5s linear infinite;
 }
 
 .skills-container {
@@ -17,7 +21,7 @@
 }
 
 .Pskills {
-  height: 800vh;
+  height: 600vh;
 }
 
 .opening-text {
@@ -34,4 +38,13 @@
 .main-skills {
   transform: translateY(100vh);
   top: 0vh;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

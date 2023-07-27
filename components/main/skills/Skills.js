@@ -166,7 +166,7 @@ const Skills = () => {
       properties: [
         {
           startValue: 100,
-          endValue: 20,
+          endValue: 15,
           unit: "vh",
           property: "translateY",
         },
@@ -246,17 +246,17 @@ const Skills = () => {
   return (
     <>
       <div className="Pskills "></div>
-      <Plx parallaxData={parallaxOpeningText} className="opening-text fixed top-1/2">
+      <Plx parallaxData={parallaxOpeningText} className="opening-text fixed top-1/2 w-full">
         <p className="text-grey font-bold text-center">LEARNING REMAINS A CHALLENGING AND ENJOYABLE JOURNEY.</p>
       </Plx>
       <Plx parallaxData={parallaxTitleText} className="title-skils w-full fixed top-1/2 z-10">
-        <div className="skills-title  flex justify-center items-center gap-3">
-          <div className="flex gap-1">
+        <div className="skills-title flex justify-center items-center gap-3">
+          <div className="flex gap-1 skilss-title-image-contain">
             <Image src="/sun-logo-orange.png" alt="orange-logo" width={15} height={50} />
             <Image src="/sun-logo-orange.png" alt="orange-logo" width={15} height={50} />
           </div>
           <h4 className="text-grey text-center tracking-[0.3em] font-bold">MY STACK OF SKILLS</h4>
-          <div className="flex gap-1">
+          <div className="flex gap-1 skilss-title-image-contain">
             <Image src="/sun-logo-orange.png" alt="orange-logo" width={15} height={50} />
             <Image src="/sun-logo-orange.png" alt="orange-logo" width={15} height={50} />
           </div>
