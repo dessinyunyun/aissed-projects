@@ -30,18 +30,18 @@ const Aboutme = () => {
       <div className={`aboutme-main bg-dark h-fit py-20 pb-40`}>
         <div className="title-box-aboutme text-grey border-2 tracking-[0.1em] border-grey w-10/12 m-auto p-1 font-neuebit overflow-hidden flex relative">
           <div className="running-text flex items-center gap-5 w-full  absolute">
-            <p className="aboutme-text-empty">About Me</p>
+            <h4 className="aboutme-text-empty">About Me</h4>
             <div className="image-aboutme">
-              <Image className="" src={"/sun-logo-grey.png"} fill={true} />
+              <Image className="" src={"/sun-logo-grey.png"} fill={true} alt="Logo" />
             </div>
-            <p className="">About Me</p>
+            <h4 className="">About Me</h4>
           </div>
           <div className={`running-text-2 flex items-center gap-5 w-full ${opacityRUnningText2}`}>
-            <p className="aboutme-text-empty">About Me</p>
+            <h4 className="aboutme-text-empty">About Me</h4>
             <div className="image-aboutme">
-              <Image className="" src={"/sun-logo-grey.png"} fill={true} />
+              <Image className="" src={"/sun-logo-grey.png"} fill={true} alt="Logo" />
             </div>
-            <p className="">About Me</p>
+            <h4 className="">About Me</h4>
           </div>
         </div>
         <div className="main-text-aboutme p-6 mt-5 bg-grey w-10/12 m-auto ">

@@ -29,6 +29,10 @@
   transform: translateY(50vh);
 }
 
+.projects-trigger {
+  height: 350vh;
+}
+
 /* ------------------------------------------------ ANIMATE ---------------------------------------------------- */
 @keyframes runningAnimation {
   0% {

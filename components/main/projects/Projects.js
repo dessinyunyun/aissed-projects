@@ -41,8 +41,8 @@ const Projects = () => {
     },
     {
       start: ".Pposition",
-      startOffset: "170vh",
-      duration: "50vh",
+      startOffset: "130vh",
+      duration: "30vh",
       properties: [
         {
           startValue: 50, // Nilai skala mulai
@@ -54,21 +54,21 @@ const Projects = () => {
     },
     {
       start: ".Pposition",
-      startOffset: "230vh",
+      startOffset: "250vh",
       duration: "50vh",
       properties: [
         {
           startValue: 100, // Nilai skala mulai
           endValue: 55, // Nilai skala berakhir
-          unit: "vw",
+          unit: "%",
           property: "width", // Menggunakan properti "scale" untuk animasi
         },
       ],
     },
     {
       start: ".Pposition",
-      startOffset: "280vh",
-      duration: "50vh",
+      startOffset: "270vh",
+      duration: "30vh",
       properties: [
         {
           startValue: 100, // Nilai skala mulai
@@ -86,7 +86,7 @@ const Projects = () => {
     },
     {
       start: ".Pposition",
-      startOffset: "330vh",
+      startOffset: "320vh",
       duration: "50vh",
       properties: [
         {
@@ -109,15 +109,15 @@ const Projects = () => {
 
   // console.log(scrollPosition);
   return (
-    <div className="Pposition h-screen flex justify-center mt-92">
-      <Plx className="width overflow-hidden bg-grey Projects-container flex justify-center items-center fixed top-1/2" parallaxData={parallaxWidth}>
+    <div className="Pposition projects-trigger h-screen flex justify-center mt-92 ">
+      <Plx className="width overflow-hidden bg-grey Projects-container flex justify-center items-center fixed top-1/2 w-1/2" parallaxData={parallaxWidth}>
         {/* <Plx className="height" parallaxData={parallaxHeight}> */}
 
         <div className="py-4 w-full">
           <div className="crossline  bg-main w-full tracking-[0.3em]">
             {" "}
             <div className="title-box-portofolio text-dark border-2  m-auto p-1 font-neuebit overflow-hidden flex relative">
-              <div className="running-text flex items-center gap-5 w-full  absolute">
+              <div className="running-text flex items-center gap-5 w-full absolute">
                 <p className="portofolio-text-empty">PROJECTS</p>
 
                 <p className="">PROJECTS</p>
@@ -130,9 +130,9 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="project-cards bg-grey absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 sm:w-2/4 lg:w-1/4 border-4 border-dark">
-            <div class="main-project-cards h-3/4 bg-grey border-dashed border-b-4 border-dark"></div>
-            <div class="footer-project-cards bg-main h-1/4"></div>
+          <div className="project-cards bg-grey absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/6 sm:w-2/4 lg:w-1/5 border-4 border-dark">
+            <div className="main-project-cards h-3/4 bg-grey border-dashed border-b-4 border-dark"></div>
+            <div className="footer-project-cards bg-main h-1/4"></div>
           </div>
         </div>
       </Plx>
