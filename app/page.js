@@ -7,14 +7,14 @@ import Projects from "@/components/main/projects/Projects";
 import Skills from "@/components/main/skills/Skills";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    // Simulasi waktu pemuatan untuk "Hero" (Anda dapat mengganti setTimeout dengan pemrosesan data atau pemanggilan API jika diperlukan)
-    const fakeLoadingTime = 2000; // 2 detik
-    setTimeout(() => {
-      setLoading(false);
-    }, fakeLoadingTime);
-  }, []);
+  const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   // Simulasi waktu pemuatan untuk "Hero" (Anda dapat mengganti setTimeout dengan pemrosesan data atau pemanggilan API jika diperlukan)
+  //   const fakeLoadingTime = 2000; // 2 detik
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, fakeLoadingTime);
+  // }, []);
   return (
     <div className={`w-full flex flex-col items-center`}>
       {loading ? (

@@ -177,6 +177,19 @@ const Skills = () => {
   const parallaxSKilss = [
     {
       start: ".Pskills",
+      startOffset: "350vh",
+      duration: "10vh",
+      properties: [
+        {
+          startValue: 100,
+          endValue: 0,
+          unit: "vh",
+          property: "translateY",
+        },
+      ],
+    },
+    {
+      start: ".Pskills",
       startOffset: "380vh",
       duration: "100vh",
       properties: [

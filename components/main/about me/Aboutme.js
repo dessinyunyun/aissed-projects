@@ -2,61 +2,149 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./aboutme.css";
+import Plx from "react-plx";
 
 const Aboutme = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [opacityRUnningText2, setOpacityRUnningText2] = useState("opacity-0");
+  const textABoutme = [
+    {
+      start: ".aboutmetrigger",
+      startOffset: "145vh",
+      duration: "80vh",
+      properties: [
+        {
+          startValue: 100,
+          endValue: 0,
+          unit: "vw",
+          property: "translateX",
+        },
+        {
+          startValue: "#0F0F0F",
+          endValue: "#E7E7E7",
+          property: "color",
+        },
+      ],
+    },
+  ];
 
-  // Fungsi untuk mengambil posisi scroll
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
-  };
+  const titleABoutme = [
+    {
+      start: ".aboutmetrigger",
+      startOffset: "50vh",
+      duration: "50vh",
+      properties: [
+        {
+          startValue: 50,
+          endValue: -15,
+          unit: "vh",
+          property: "translateY",
+        },
+      ],
+    },
+    {
+      start: ".aboutmetrigger",
+      startOffset: "140vh",
+      duration: "250vh",
+      properties: [
+        {
+          startValue: 0,
+          endValue: -100,
+          unit: "vw",
+          property: "translateX",
+        },
+      ],
+    },
+  ];
 
-  // Menggunakan useEffect untuk mendengarkan event scroll
-  useEffect(() => {
-    setInterval(function () {
-      setOpacityRUnningText2("opacity-1");
-    }, 7150);
+  const titleABoutmeInsideTextAboutmeContainer = [
+    {
+      start: ".aboutmetrigger",
+      startOffset: "50vh",
+      duration: "50vh",
+      properties: [
+        {
+          startValue: 50,
+          endValue: -15,
+          unit: "vh",
+          property: "translateY",
+        },
+      ],
+    },
+    {
+      start: ".aboutmetrigger",
+      startOffset: "10vh",
+      duration: "50vh",
+      properties: [
+        {
+          startValue: -200,
+          endValue: -200,
+          unit: "vh",
+          property: "translateX",
+        },
+      ],
+    },
+    {
+      start: ".aboutmetrigger",
+      startOffset: "120vh",
+      duration: "100vh",
+      properties: [
+        {
+          startValue: -100,
+          endValue: -10,
+          unit: "vw",
+          property: "translateX",
+        },
+      ],
+    },
+  ];
+  const titleABoutmeInsideTextAboutmeContainer2 = [
+    {
+      start: ".aboutmetrigger",
+      startOffset: "50vh",
+      duration: "50vh",
+      properties: [
+        {
+          startValue: 50,
+          endValue: 15,
+          unit: "vh",
+          property: "translateY",
+        },
+      ],
+    },
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    {
+      start: ".aboutmetrigger",
+      startOffset: "140vh",
+      duration: "100vh",
+      properties: [
+        {
+          startValue: 100,
+          endValue: 10,
+          unit: "vw",
+          property: "translateX",
+        },
+      ],
+    },
+  ];
 
   return (
-    <div className="aboutme-contain">
-      <div className={`aboutme-main bg-dark h-fit py-20 pb-40`}>
-        <div className="title-box-aboutme text-grey border-2 tracking-[0.1em] border-grey w-10/12 m-auto p-1 font-neuebit overflow-hidden flex relative">
-          <div className="running-text flex items-center gap-5 w-full  absolute">
-            <h4 className="aboutme-text-empty">About Me</h4>
-            <div className="image-aboutme">
-              <Image className="" src={"/sun-logo-grey.png"} fill={true} alt="Logo" />
-            </div>
-            <h4 className="">About Me</h4>
-          </div>
-          <div className={`running-text-2 flex items-center gap-5 w-full ${opacityRUnningText2}`}>
-            <h4 className="aboutme-text-empty">About Me</h4>
-            <div className="image-aboutme">
-              <Image className="" src={"/sun-logo-grey.png"} fill={true} alt="Logo" />
-            </div>
-            <h4 className="">About Me</h4>
-          </div>
-        </div>
-        <div className="main-text-aboutme p-6 mt-5 bg-grey w-10/12 m-auto ">
+    <div className="aboutmetrigger w-full font-montreal">
+      <Plx className="title-aboutme fixed w-full top-1/2" parallaxData={titleABoutme}>
+        <h4 className="font-bold text-center tracking-[0.05em]">ABOUT ME</h4>
+      </Plx>
+      <Plx className="fixed text-aboutme flex justify-center items-center w-full top-0 overflow-hidden bg-dark" parallaxData={textABoutme}>
+        <Plx className="title-aboutme-inside-text-container fixed w-full top-1/2 text-dark z-0" parallaxData={titleABoutmeInsideTextAboutmeContainer}>
+          <h4 className="font-bold text-center tracking-[0.05em]">ABOUT ME</h4>
+        </Plx>
+        <Plx className="title-aboutme-inside-text-container-2 text-main fixed w-full top-1/2  z-0" parallaxData={titleABoutmeInsideTextAboutmeContainer2}>
+          <h4 className="font-bold text-center tracking-[0.05em]">ABOUT ME</h4>
+        </Plx>
+        <div className="p-6 mt-5 w-full rounded-3xl font-medium tracking-[0.1em] relative">
           <p className="mb-2">
-            I am a web developer with a strong background in website development. My degree in Information Systems has provided the foundation for my expertise in developing technological solutions. Additionally, I have completed a
-            certified web developer training program facilitated by the government and successfully finished a boot camp that enhanced my knowledge and skills.
+            After working as a graphic designer at a renowned media company in my city, I developed a keen interest in the world of application development. I am delighted to merge both my skills: Design and Programming. Each day is an
+            exciting journey as I continuously learn new things.
           </p>
-          <p className="mb-2">As a fullstack JavaScript developer, I can deliver comprehensive solutions from the front-end to the back-end. I have prior experience as a freelancer and have been involved in various successful projects.</p>
-          <p className="mb-2">
-            Before focusing on web development, I pursued a career as a graphic designer at a renowned media company in my city. This experience has given me unique insights into integrating attractive designs with functionality in my web
-            projects.
-          </p>
-          <p>Currently, I lean more towards the front-end development field. I am enthusiastic about creating appealing, interactive, and responsive user interfaces.</p>
         </div>
-      </div>
+      </Plx>
     </div>
   );
 };
