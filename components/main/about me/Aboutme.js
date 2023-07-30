@@ -24,6 +24,19 @@ const Aboutme = () => {
         },
       ],
     },
+    {
+      start: ".aboutmetrigger",
+      startOffset: "350vh",
+      duration: "80vh",
+      properties: [
+        {
+          startValue: 0,
+          endValue: -100,
+          unit: "vh",
+          property: "translateY",
+        },
+      ],
+    },
   ];
 
   const titleABoutme = [
@@ -43,7 +56,7 @@ const Aboutme = () => {
     {
       start: ".aboutmetrigger",
       startOffset: "140vh",
-      duration: "250vh",
+      duration: "180vh",
       properties: [
         {
           startValue: 0,
@@ -89,7 +102,7 @@ const Aboutme = () => {
       properties: [
         {
           startValue: -100,
-          endValue: -10,
+          endValue: -20,
           unit: "vw",
           property: "translateX",
         },
@@ -110,7 +123,19 @@ const Aboutme = () => {
         },
       ],
     },
-
+    // {
+    //   start: ".aboutmetrigger",
+    //   startOffset: "10vh",
+    //   duration: "50vh",
+    //   properties: [
+    //     {
+    //       startValue: -200,
+    //       endValue: -200,
+    //       unit: "vh",
+    //       property: "translateX",
+    //     },
+    //   ],
+    // },
     {
       start: ".aboutmetrigger",
       startOffset: "140vh",
@@ -118,7 +143,7 @@ const Aboutme = () => {
       properties: [
         {
           startValue: 100,
-          endValue: 10,
+          endValue: 20,
           unit: "vw",
           property: "translateX",
         },
