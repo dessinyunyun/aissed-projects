@@ -10,6 +10,7 @@ const ProjectsCard = () => {
       ref: useRef(null),
       desc: "provides information products and services",
       z: 1,
+      defaultPosition: { x: 0, y: 0 },
     },
     {
       image: "/projects/lentera-inovasi.jpg",
@@ -17,10 +18,12 @@ const ProjectsCard = () => {
       ref: useRef(null),
       desc: "provides information products and services",
       z: 2,
+      defaultPosition: { x: 50, y: 0 },
     },
     {
       image: "/projects/SMS.jpg",
       title: "CONSTRUCTION",
+      defaultPosition: { x: 0, y: 0 },
       ref: useRef(null),
       desc: "provides information products and services",
       z: 3,
@@ -28,17 +31,71 @@ const ProjectsCard = () => {
   ]);
 
   const [defaultPosition, setDefaultPosition] = useState({ x: 0, y: 0 });
+  const [disabledCondition, setDisabledCondition] = useState(false);
+
+  // const eventLogger = (e, data, index) => {
+  //   // console.log("Event: ", e);
+  //   // console.log("Data: ", data);
+  //   // console.log("Index: ", index);
+  //   // setDefaultPosition({ x: 0, y: 0 });
+
+  //   if (data.lastX > 100 || data.lastX < -100) {
+  //     setDisabledCondition(true);
+  //     setTimeout(() => {
+  //       setDisabledCondition(false);
+  //     }, 1000);
+  //     cards.map((crd, idx) => {
+  //       if (index == idx) {
+  //         console.log(crd.ref.current);
+  //         crd.ref.current.style.transform = `translate(400px,0px)`;
+  //       }
+  //     });
+  //     console.log("doneeeeeeeeeeeeeee");
+  //     // Kembali ke posisi semula dengan setPosition
+  //     // data.node.lastX = 350;
+  //     // setDefaultPosition({ x: 0, y: 0 });
+  //     // handleCardClick();
+  //   }
+  // };
+
+  const handleDrag = (e) => {
+    // Update defaultPosition saat drag berlangsung
+    setDefaultPosition({ x: 400, y: 0 });
+  };
 
   const eventLogger = (e, data, index) => {
-    console.log("Event: ", e);
-    console.log("Data: ", data);
-    setDefaultPosition({ x: 0, y: 0 });
     if (data.lastX > 100 || data.lastX < -100) {
-      console.log("doneeeeeeeeeeeeeee");
-      // Kembali ke posisi semula dengan setPosition
-      // data.node.setPosition({ x: 0, y: 0 });
-      setDefaultPosition({ x: 0, y: 0 });
-      handleCardClick();
+      // setDisabledCondition(true);
+
+      // Mengubah posisi kartu yang terkena kondisi if menggunakan setCards
+      setCards((prevCards) =>
+        prevCards.map((card, idx) => {
+          if (idx === index) {
+            return {
+              ...card,
+              defaultPosition: { x: data.lastX > 100 ? 300 : -300, y: 0 }, // Ubah posisi kartu yang terkena kondisi if
+            };
+          }
+          return card;
+        })
+      );
+
+      setTimeout(() => {
+        // Mengatur ulang posisi kartu setelah 1 detik
+        setCards((prevCards) =>
+          prevCards.map((card, idx) => {
+            if (idx === index) {
+              return {
+                ...card,
+                defaultPosition: { x: 0, y: 0 }, // Kembalikan posisi kartu ke (0, 0)
+              };
+            }
+            return card;
+          })
+        );
+        setDisabledCondition(false);
+        handleCardClick();
+      }, 250);
     }
   };
 
@@ -59,9 +116,10 @@ const ProjectsCard = () => {
   return (
     <>
       {cards.map((dt, index) => {
+        console.log(index);
         return (
-          <Draggable key={index} axis="x" handle=".handle" position={defaultPosition} grid={[25, 25]} onStop={eventLogger} scale={1}>
-            <div className="relative" style={{ transition: "all 0.2s", zIndex: `${dt.z}` }} ref={dt.ref}>
+          <Draggable disabled={disabledCondition} key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1}>
+            <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
               <div className={`project-cards `} style={{ transform: `translate(-50%, -50%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
                 <div className="main-project-cards text-main handle">
                   <Image

@@ -1,5 +1,5 @@
 .project-cards {
-  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark w-2/3 sm:w-3/6 md:w-3/12 lg:w-1/5;
+  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark w-2/3 sm:w-6/12 md:w-5/12 lg:w-2/12;
 }
 
 .project-cards {
@@ -13,6 +13,11 @@
 
 .rotate-transition {
   transition: transform 0.3s ease; /* Ganti durasi dan jenis transisi sesuai kebutuhan */
+}
+
+.tes {
+  transform: translateX(50px);
+  transition: all 3s;
 }
 
 .main-project-cards {
