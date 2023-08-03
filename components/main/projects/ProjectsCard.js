@@ -18,7 +18,7 @@ const ProjectsCard = () => {
       ref: useRef(null),
       desc: "provides information products and services",
       z: 2,
-      defaultPosition: { x: 50, y: 0 },
+      defaultPosition: { x: 0, y: 0 },
     },
     {
       image: "/projects/SMS.jpg",
@@ -73,13 +73,13 @@ const ProjectsCard = () => {
           if (idx === index) {
             return {
               ...card,
-              defaultPosition: { x: data.lastX > 100 ? 300 : -300, y: 0 }, // Ubah posisi kartu yang terkena kondisi if
+              defaultPosition: { x: data.lastX > 100 ? 350 : -350, y: 0 }, // Ubah posisi kartu yang terkena kondisi if
             };
           }
           return card;
         })
       );
-
+      handleCardClick();
       setTimeout(() => {
         // Mengatur ulang posisi kartu setelah 1 detik
         setCards((prevCards) =>
@@ -94,7 +94,6 @@ const ProjectsCard = () => {
           })
         );
         setDisabledCondition(false);
-        handleCardClick();
       }, 250);
     }
   };
