@@ -33,7 +33,7 @@ const ProjectsCard = () => {
     console.log("Event: ", e);
     console.log("Data: ", data);
     setDefaultPosition({ x: 0, y: 0 });
-    if (data.lastX > 450 || data.lastX < -450) {
+    if (data.lastX > 100 || data.lastX < -100) {
       console.log("doneeeeeeeeeeeeeee");
       // Kembali ke posisi semula dengan setPosition
       // data.node.setPosition({ x: 0, y: 0 });
@@ -61,8 +61,8 @@ const ProjectsCard = () => {
       {cards.map((dt, index) => {
         return (
           <Draggable key={index} axis="x" handle=".handle" position={defaultPosition} grid={[25, 25]} onStop={eventLogger} scale={1}>
-            <div className="relative" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
-              <div className={`project-cards `} style={{ transform: `translate(-50%, -50%) rotate(${dt.z == 3 ? 0 : dt.z + 5}deg)` }}>
+            <div className="relative" style={{ transition: "all 0.2s", zIndex: `${dt.z}` }} ref={dt.ref}>
+              <div className={`project-cards `} style={{ transform: `translate(-50%, -50%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
                 <div className="main-project-cards text-main handle">
                   <Image
                     src={dt.image}
