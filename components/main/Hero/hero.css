@@ -1,8 +1,9 @@
-.grey-hero {
-  font-weight: 700;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  color: #e7e7e7;
-  margin-top: -5px;
+.hero-container {
+  @apply bg-grey m-auto w-screen py-8 flex flex-col items-center justify-center;
+}
+
+.hero-container-inside {
+  @apply h-screen flex flex-col items-start justify-center gap-2 w-10/12;
 }
 
 .name-title {
@@ -10,8 +11,39 @@
 }
 
 .web-title {
+  @apply font-bold tracking-[0.1em] -my-3;
+}
+
+.web-title {
   font-size: 8.8vw;
   margin-top: clamp(-10%, 50vw, -5%);
+}
+
+.main-div {
+  @apply bg-main lg:h-1/4 w-full p-4 lg:p-4 lg:flex;
+}
+
+.grey-box {
+  @apply bg-grey w-full rounded-md lg:rounded-r-2xl lg:rounded-l-none lg:w-2/5 h-32 lg:h-full mb-8 lg:mr-5 flex items-center justify-center;
+}
+
+.grey-hero {
+  @apply font-neuebit text-5xl;
+}
+
+.grey-hero {
+  font-weight: 700;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #e7e7e7;
+  margin-top: -5px;
+}
+
+.orange-box {
+  @apply flex flex-col justify-end  lg:w-3/5;
+}
+
+.javascript-hero-title {
+  @apply font-medium tracking-[0.1em];
 }
 
 .javascript-hero-title {
@@ -20,4 +52,8 @@
 
 .javascript-hero-desc {
   font-size: 1.3vw;
+}
+
+.barcode-container {
+  @apply w-full flex flex-col items-end;
 }

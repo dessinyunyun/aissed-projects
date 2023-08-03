@@ -1,0 +1,38 @@
+.project-cards {
+  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark;
+}
+
+.project-cards {
+  user-select: none; /* Mencegah pemilihan teks */
+  pointer-events: auto; /* Mengaktifkan interaksi mouse */
+  cursor: grab; /* Mengganti kursor mouse menjadi grab */
+  transition: "transform 0.5s" !important;
+  transform-origin: center;
+}
+
+.rotate-transition {
+  transition: transform 0.3s ease; /* Ganti durasi dan jenis transisi sesuai kebutuhan */
+}
+
+.main-project-cards {
+  @apply flex-grow bg-main border-dashed border-b-4 border-dark w-full h-full relative;
+}
+.main-project-cards {
+  height: 60vh;
+  width: 100%;
+}
+
+.project-desc {
+  border-right: solid #0f0f0f 3px;
+}
+.project-desc > p {
+  font-size: clamp(11px, 5vw, 16px);
+}
+
+.footer-project-cards {
+  @apply bg-main h-fit;
+}
+
+.footer-container {
+  border: solid #0f0f0f 3px;
+}

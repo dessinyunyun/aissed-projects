@@ -1,0 +1,6 @@
+.react-draggable-dragged {
+  transition: 5s; /* Ubah durasi dan fungsi timing sesuai kebutuhan */
+}
+.draggable-element {
+  transition: 5s; /* Ubah durasi dan fungsi timing sesuai kebutuhan */
+}

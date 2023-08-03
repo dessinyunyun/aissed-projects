@@ -6,3 +6,18 @@ html {
   background-color: #0f0f0f;
   overflow-x: hidden;
 }
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+main {
+  position: relative;
+  height: 200px; /* Sesuaikan tinggi kartu sesuai kebutuhan */
+}

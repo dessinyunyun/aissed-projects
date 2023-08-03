@@ -1,37 +1,23 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Plx from "react-plx";
 import "./hero.css";
+import { textData } from "./parallaxConfig";
 
-const page = () => {
-  const textData = [
-    {
-      start: ".StickyText",
-      startOffset: "120vh",
-      duration: "50vh",
-      properties: [
-        {
-          startValue: 1,
-          endValue: 0,
-          property: "opacity",
-        },
-      ],
-    },
-  ];
-
+const Hero = () => {
   return (
-    <Plx className="StickyText" parallaxData={textData}>
-      <div className="bg-grey m-auto w-screen py-8  flex flex-col items-center justify-center">
-        <div className="h-screen flex flex-col items-start justify-center gap-2 w-10/12">
+    <Plx className="hero-parallax" parallaxData={textData}>
+      <div className="hero-container">
+        <div className="hero-container-inside">
           <div className="title">
             <h1 className="name-title font-regular">Hello. I am Dessi Anwar</h1>
-            <h2 className="web-title font-bold tracking-[0.1em] -my-3">WEB DEVELOPER</h2>
+            <h2 className="web-title">WEB DEVELOPER</h2>
           </div>
-          <div className="main-div bg-main lg:h-1/4 w-full p-4 lg:p-4 lg:flex">
-            <div className="grey-box bg-grey w-full rounded-md lg:rounded-r-2xl lg:rounded-l-none lg:w-2/5 h-32 lg:h-full mb-8 lg:mr-5 flex items-center justify-center">
-              <div className="grey-hero font-neuebit text-5xl ">
+
+          <div className="main-div">
+            <div className="grey-box">
+              <div className="grey-hero ">
                 <Typewriter
                   options={{
                     strings: [`<   html />`, `<   style />`, `<   script />`],
@@ -41,15 +27,15 @@ const page = () => {
                 />
               </div>
             </div>
-            <div className="main flex flex-col justify-end  lg:w-3/5">
-              <h3 className="javascript-hero-title font-medium tracking-[0.1em]">FULLSTACK . JAVASCRIPT</h3>
+            <div className="orange-box">
+              <h3 className="javascript-hero-title">FULLSTACK . JAVASCRIPT</h3>
               <p className="javascript-hero-desc font-regular">
                 Web Knowledge Seeker: <br />
                 Embracing Endless Learning Opportunities
               </p>
             </div>
           </div>
-          <div className="barcode w-full flex flex-col items-end">
+          <div className="barcode-container">
             <Image src={"/hero-barcode.png"} width={150} height={0} alt="barcode" />
             <p className="-mt-3">@2023</p>
           </div>
@@ -59,4 +45,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Hero;

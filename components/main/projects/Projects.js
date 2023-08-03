@@ -1,106 +1,13 @@
 "use client";
-import Image from "next/image";
+
 import React, { useState, useEffect } from "react";
-import Typewriter from "typewriter-effect";
+import { parallaxWidth } from "./parallaxConfig";
 import "./projects.css";
 import Plx from "react-plx";
+import ProjectsCard from "./ProjectsCard";
 
 const Projects = () => {
-  const parallaxWidth = [
-    {
-      start: ".Pposition",
-      startOffset: "50vh",
-      duration: "50vh",
-      properties: [
-        {
-          startValue: 50,
-          endValue: 0,
-          unit: "vh",
-          property: "translateY",
-        },
-      ],
-    },
-    {
-      start: ".Pposition",
-      startOffset: "110vh",
-      duration: "50vh",
-      properties: [
-        {
-          startValue: 20, // Nilai skala mulai
-          endValue: 120, // Nilai skala berakhir
-          unit: "vh",
-          property: "height", // Menggunakan properti "scale" untuk animasi
-        },
-        {
-          startValue: 0,
-          endValue: -60,
-          unit: "vh",
-          property: "translateY",
-        },
-      ],
-    },
-    {
-      start: ".Pposition",
-      startOffset: "130vh",
-      duration: "30vh",
-      properties: [
-        {
-          startValue: 50, // Nilai skala mulai
-          endValue: 100, // Nilai skala berakhir
-          unit: "%",
-          property: "width", // Menggunakan properti "scale" untuk animasi
-        },
-      ],
-    },
-    {
-      start: ".Pposition",
-      startOffset: "250vh",
-      duration: "50vh",
-      properties: [
-        {
-          startValue: 100, // Nilai skala mulai
-          endValue: 55, // Nilai skala berakhir
-          unit: "%",
-          property: "width", // Menggunakan properti "scale" untuk animasi
-        },
-      ],
-    },
-    {
-      start: ".Pposition",
-      startOffset: "270vh",
-      duration: "30vh",
-      properties: [
-        {
-          startValue: 100, // Nilai skala mulai
-          endValue: 10, // Nilai skala berakhir
-          unit: "vh",
-          property: "height", // Menggunakan properti "scale" untuk animasi
-        },
-        {
-          startValue: -50,
-          endValue: -5,
-          unit: "vh",
-          property: "translateY",
-        },
-      ],
-    },
-    {
-      start: ".Pposition",
-      startOffset: "320vh",
-      duration: "50vh",
-      properties: [
-        {
-          startValue: -5,
-          endValue: -60,
-          unit: "vh",
-          property: "translateY",
-        },
-      ],
-    },
-  ];
-
   const [opacityRUnningText2, setOpacityRUnningText2] = useState("opacity-0");
-
   useEffect(() => {
     setInterval(function () {
       setOpacityRUnningText2("opacity-1");
@@ -109,31 +16,24 @@ const Projects = () => {
 
   // console.log(scrollPosition);
   return (
-    <div className="Pposition projects-trigger h-screen flex justify-center mt-92 ">
-      <Plx className="width overflow-hidden bg-grey Projects-container flex justify-center items-center fixed top-1/2 w-1/2" parallaxData={parallaxWidth}>
-        {/* <Plx className="height" parallaxData={parallaxHeight}> */}
-
-        <div className="py-4 w-full">
-          <div className="crossline  bg-main w-full tracking-[0.3em]">
+    <div className="projects-trigger mt-92">
+      <Plx className="projects-container relative" parallaxData={parallaxWidth}>
+        <div className="w-full ">
+          <div className="crossline">
             {" "}
-            <div className="title-box-portofolio text-dark border-2  m-auto p-1 font-neuebit overflow-hidden flex relative">
-              <div className="running-text flex items-center gap-5 w-full absolute">
+            <div className="title-box-portofolio">
+              <div className="running-text">
                 <p className="portofolio-text-empty">PROJECTS</p>
 
                 <p className="">PROJECTS</p>
               </div>
-              <div className={`running-text-2 flex items-center gap-5 w-full ${opacityRUnningText2}`}>
+              <div className={`running-text-2 ${opacityRUnningText2}`}>
                 <p className="portofolio-text-empty">PROJECTS</p>
-
                 <p className="">PROJECTS</p>
               </div>
             </div>
           </div>
-
-          <div className="project-cards bg-grey absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/6 sm:w-2/4 lg:w-1/5 border-4 border-dark">
-            <div className="main-project-cards h-3/4 bg-grey border-dashed border-b-4 border-dark"></div>
-            <div className="footer-project-cards bg-main h-1/4"></div>
-          </div>
+          <ProjectsCard />
         </div>
       </Plx>
     </div>

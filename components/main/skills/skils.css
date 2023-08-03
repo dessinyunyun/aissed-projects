@@ -1,14 +1,41 @@
-.borderSKilss {
-  border: 1px solid;
-  border-radius: 15px;
+.Pskills {
+  height: 550vh;
 }
 
-.skills-title {
+.opening-text {
+  @apply fixed top-1/2 w-full text-grey font-bold text-center opacity-0;
+}
+
+.opening-text {
+  font-size: clamp(15px, 3vw, 30px);
+}
+
+.title-skils {
+  @apply w-full fixed top-1/2 z-10 opacity-0;
+}
+
+.skills-title-container {
+  @apply flex justify-center items-center gap-3;
+}
+
+.skills-title-container {
   font-size: clamp(14px, 3vw, 24px);
+}
+
+.skilss-title-image-contain {
+  @apply flex gap-1;
 }
 
 .skilss-title-image-contain > img {
   animation: spin 5s linear infinite;
+}
+
+.title-skilss {
+  @apply text-grey text-center tracking-[0.3em] font-bold;
+}
+
+.skills-container {
+  @apply w-full h-screen flex flex-col justify-center items-center fixed top-0;
 }
 
 .skills-container {
@@ -20,24 +47,18 @@
   opacity: 0;
 }
 
-.Pskills {
-  height: 550vh;
-}
-
-.opening-text {
-  /* transform: translateY(50vh); */
-  font-size: clamp(15px, 3vw, 30px);
-
-  opacity: 0;
-}
-
-.title-skils {
-  opacity: 0;
+.main-skills {
+  @apply grid grid-cols-4 place-content-center p-10 md:grid-cols-6 fixed;
 }
 
 .main-skills {
   transform: translateY(100vh);
   top: 0vh;
+}
+
+.borderSKilss {
+  border: 1px solid;
+  border-radius: 15px;
 }
 
 @keyframes spin {

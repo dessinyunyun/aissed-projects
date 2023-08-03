@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import Loading from "./loading";
+import { Suspense } from "react";
 
 import localFont from "next/font/local";
 
@@ -23,7 +25,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${neuebit.variable} ${NeueMontreal.variable} flex justify-center`}>
         <Navbar />
-        {children}
+        <Suspense fallback={<Loading />}>
+          {children}
+          {/* <Page /> */}
+        </Suspense>
       </body>
     </html>
   );
