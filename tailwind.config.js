@@ -16,6 +16,10 @@ module.exports = {
         neuebit: ["var(--neue-bit)"],
         montreal: ["var(--neue-Montreal)"],
       },
+      width: {
+        "custom-lg": "26%", // Misalnya, lebar custom dengan nilai 20 rem
+        "half-screen": "50vw", // Lebar setengah layar
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Hero from "@/components/main/Hero/Hero";
 import Aboutme from "@/components/main/about me/Aboutme";
@@ -8,29 +8,15 @@ import Skills from "@/components/main/skills/Skills";
 import Card from "@/components/Card";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   // Simulasi waktu pemuatan untuk "Hero" (Anda dapat mengganti setTimeout dengan pemrosesan data atau pemanggilan API jika diperlukan)
-  //   const fakeLoadingTime = 2000; // 2 detik
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, fakeLoadingTime);
-  // }, []);
   return (
     <div className={`w-full flex flex-col items-center`}>
-      {loading ? (
-        // Tampilkan loading screen ketika loading masih true
-        <div className="text-grey">Loading...</div>
-      ) : (
-        // Tampilkan konten utama ketika loading menjadi false
-        <>
-          <Hero />
-          <Aboutme />
-          {/* <Card /> */}
-          <Projects />
-          <Skills />
-        </>
-      )}
+      <>
+        <Hero />
+        <Aboutme />
+        {/* <Card /> */}
+        <Projects />
+        <Skills />
+      </>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 .project-cards {
-  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark w-2/3 sm:w-6/12 md:w-6/12 lg:w-1/5;
+  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark w-3/4 sm:w-6/12 md:w-5/12 lg:w-custom-lg;
 }
 
 .project-cards {
@@ -8,7 +8,7 @@
   cursor: grab; /* Mengganti kursor mouse menjadi grab */
   transition: "transform 0.5s" !important;
   transform-origin: center;
-  font-size: clamp(11px, 3vw, 16px);
+  font-size: clamp(11px, 3vw, 15px);
 }
 
 .rotate-transition {
@@ -21,24 +21,43 @@
 }
 
 .main-project-cards {
-  @apply flex-grow bg-main border-dashed border-b-4 border-dark w-full h-full relative;
+  @apply flex-grow   bg-main border-dashed border-b-4 border-dark w-full relative;
 }
 .main-project-cards {
   height: 55vh;
   width: 100%;
 }
+.main-project-cards > img {
+  @apply object-cover h-3/4;
+}
+
+.footer-project-cards {
+  @apply bg-main h-fit  p-2.5;
+}
+
+.footer-container {
+  @apply flex border-dark rounded-lg h-full;
+}
+.footer-container {
+  border: solid #0f0f0f 3px;
+}
 
 .project-desc {
+  @apply w-3/5 p-1.5;
+}
+.project-desc {
   border-right: solid #0f0f0f 3px;
+}
+.project-desc > h5 {
+  @apply text-center font-bold;
 }
 .project-desc > p {
   font-size: clamp(11px, 3vw, 13px);
 }
 
-.footer-project-cards {
-  @apply bg-main h-fit;
+.footer-img-container {
+  @apply w-2/5 relative p-2;
 }
-
-.footer-container {
-  border: solid #0f0f0f 3px;
+.footer-img-container > img {
+  @apply object-contain;
 }

@@ -43,24 +43,28 @@ const ProjectsCard = () => {
           return card;
         })
       );
-      handleCardClick();
-      setTimeout(() => {
-        setCards((prevCards) =>
-          prevCards.map((card, idx) => {
-            if (idx === index) {
-              return {
-                ...card,
-                defaultPosition: { x: 0, y: 0 },
-              };
-            }
-            return card;
-          })
-        );
-      }, 200);
+      changeIndexCard();
+      changePositionDefaultCard(index);
     }
   };
 
-  const handleCardClick = () => {
+  const changePositionDefaultCard = (indexCardActive) => {
+    setTimeout(() => {
+      setCards((prevCards) =>
+        prevCards.map((card, idx) => {
+          if (idx === indexCardActive) {
+            return {
+              ...card,
+              defaultPosition: { x: 0, y: 0 },
+            };
+          }
+          return card;
+        })
+      );
+    }, 200);
+  };
+
+  const changeIndexCard = () => {
     setCards((prevCards) =>
       prevCards.map((card) => {
         const newZ = card.z === cards.length ? 1 : card.z + 1;
@@ -72,8 +76,6 @@ const ProjectsCard = () => {
     );
   };
 
-  console.log(cards);
-
   return (
     <>
       {cards.map((dt, index) => {
@@ -81,34 +83,18 @@ const ProjectsCard = () => {
         return (
           <Draggable key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1} ref={dt.ref}>
             <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
-              <div className={`project-cards `} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
-                <div className="main-project-cards text-main handle">
-                  <Image
-                    src={dt.image}
-                    fill
-                    style={{
-                      objectFit: "cover", // cover, contain, none
-                    }}
-                    className="h-3/4 "
-                    alt="projects-card-image"
-                    draggable="false"
-                  />
+              <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
+                <div className="main-project-cards handle">
+                  <Image src={dt.image} fill alt="projects-card-image" draggable="false" />
                 </div>
-                <div className="footer-project-cards p-2.5">
-                  <div className="footer-container flex border-dark rounded-lg h-full">
-                    <div className="project-desc w-3/5 p-1.5">
-                      <h5 className="text-center font-bold">{dt.title}</h5>
+                <div className="footer-project-cards">
+                  <div className="footer-container">
+                    <div className="project-desc">
+                      <h5>{dt.title}</h5>
                       <p>{dt.desc}</p>
                     </div>
-                    <div className="w-2/5 relative p-2">
-                      <Image
-                        src={"/projects/mitsubishi-barcode.png"}
-                        fill
-                        style={{
-                          objectFit: "contain",
-                        }}
-                        alt="barcode"
-                      />
+                    <div className="footer-img-container">
+                      <Image src={"/projects/mitsubishi-barcode.png"} fill alt="barcode" />
                     </div>
                   </div>
                 </div>
