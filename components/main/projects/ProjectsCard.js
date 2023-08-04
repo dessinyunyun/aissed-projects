@@ -107,6 +107,7 @@ const ProjectsCard = () => {
                         style={{
                           objectFit: "contain",
                         }}
+                        alt="barcode"
                       />
                     </div>
                   </div>
