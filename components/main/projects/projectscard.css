@@ -24,7 +24,7 @@
   @apply flex-grow bg-main border-dashed border-b-4 border-dark w-full h-full relative;
 }
 .main-project-cards {
-  height: 60vh;
+  height: 55vh;
   width: 100%;
 }
 

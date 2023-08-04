@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import "./skils.css";
 import Plx from "react-plx";
@@ -56,7 +56,7 @@ const Skills = () => {
         boxes.push(
           <Plx {...props} key={`${index} ${boxIndex}`} parallaxData={box.data}>
             <div className="borderSKilss p-2 bg-grey ">
-              <Image src={skillsLogo[boxIndex + index * BOXES_PER_ROW].src} alt={skillsLogo[boxIndex + index * BOXES_PER_ROW].alt} width={100} height={50} />
+              <Image src={skillsLogo[boxIndex + index * BOXES_PER_ROW].src} alt={skillsLogo[boxIndex + index * BOXES_PER_ROW].alt} width={100} height={50} priority={true} />
             </div>
           </Plx>
         );
