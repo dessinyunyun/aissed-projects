@@ -43,6 +43,7 @@ const ProjectsCard = () => {
           return card;
         })
       );
+
       changeIndexCard();
       changePositionDefaultCard(index);
     }
