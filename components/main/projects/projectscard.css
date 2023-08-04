@@ -1,5 +1,5 @@
 .project-cards {
-  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark w-2/3 sm:w-6/12 md:w-5/12 lg:w-2/12;
+  @apply absolute top-1/2 left-1/2 flex flex-col border-4 border-dark w-2/3 sm:w-6/12 md:w-6/12 lg:w-1/5;
 }
 
 .project-cards {
@@ -32,7 +32,7 @@
   border-right: solid #0f0f0f 3px;
 }
 .project-desc > p {
-  font-size: clamp(11px, 3vw, 16px);
+  font-size: clamp(11px, 3vw, 13px);
 }
 
 .footer-project-cards {

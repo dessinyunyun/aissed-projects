@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container absolute z-10 gap-5 py-5 flex justify-between items-center w-10/12 font-regular">
       <div className="logo">
-        <Image src={"/sun-logo.png"} width={50} height={50} alt="Logo" />
+        <Image src={"/sun-logo.png"} width={50} height={50} alt="Logo" priority={true} />
       </div>
       <div className="nav-menu">
         <ul className="flex gap-5 items-center">

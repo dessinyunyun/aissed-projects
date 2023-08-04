@@ -81,7 +81,7 @@ const ProjectsCard = () => {
         return (
           <Draggable key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1} ref={dt.ref}>
             <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
-              <div className={`project-cards `} style={{ transform: `translate(-50%, -50%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
+              <div className={`project-cards `} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
                 <div className="main-project-cards text-main handle">
                   <Image
                     src={dt.image}
