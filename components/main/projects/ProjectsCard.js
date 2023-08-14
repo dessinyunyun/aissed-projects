@@ -11,6 +11,7 @@ const ProjectsCard = () => {
       desc: "provides information products and services",
       z: 1,
       defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/mitsubishi-barcode.png",
     },
     {
       image: "/projects/lentera-inovasi.jpg",
@@ -19,14 +20,25 @@ const ProjectsCard = () => {
       desc: "provides information products and services",
       z: 2,
       defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/lenterainovasi-barcode.png",
     },
     {
       image: "/projects/SMS.jpg",
       title: "CONSTRUCTION",
-      defaultPosition: { x: 0, y: 0 },
       ref: useRef(null),
       desc: "provides information products and services",
       z: 3,
+      defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/SMS-barcode.png",
+    },
+    {
+      image: "/projects/hnsi.jpg",
+      title: "FISHERS' ORGANIZATION",
+      ref: useRef(null),
+      desc: "provides information products and services",
+      z: 4,
+      defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/hnsi-barcode.png",
     },
   ]);
 
@@ -84,7 +96,7 @@ const ProjectsCard = () => {
         return (
           <Draggable key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1} ref={dt.ref}>
             <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
-              <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == 3 ? 0 : dt.z + dt.z * 1.5}deg)` }}>
+              <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == cards.length ? 0 : dt.z + dt.z * 1.5}deg)` }}>
                 <div className="main-project-cards handle">
                   <Image src={dt.image} fill alt="projects-card-image" draggable="false" />
                 </div>
@@ -95,7 +107,7 @@ const ProjectsCard = () => {
                       <p>{dt.desc}</p>
                     </div>
                     <div className="footer-img-container">
-                      <Image src={"/projects/mitsubishi-barcode.png"} fill alt="barcode" />
+                      <Image src={dt.barcode} fill alt="barcode" />
                     </div>
                   </div>
                 </div>
