@@ -35,8 +35,17 @@ const ProjectsCard = () => {
       image: "/projects/hnsi.jpg",
       title: "FISHERS' ORGANIZATION",
       ref: useRef(null),
-      desc: "provides information products and services",
+      desc: "HNSI Identity Website.",
       z: 4,
+      defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/hnsi-barcode.png",
+    },
+    {
+      image: "/projects/todolist.jpg",
+      title: "TODOLIST",
+      ref: useRef(null),
+      desc: "Organize tasks effortlessly with ToDoList.",
+      z: 5,
       defaultPosition: { x: 0, y: 0 },
       barcode: "/projects/hnsi-barcode.png",
     },
@@ -96,7 +105,7 @@ const ProjectsCard = () => {
         return (
           <Draggable key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1} ref={dt.ref}>
             <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
-              <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == cards.length ? 0 : dt.z + dt.z * 1.5}deg)` }}>
+              <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == cards.length ? 0 : dt.z + dt.z * 1}deg)` }}>
                 <div className="main-project-cards handle">
                   <Image src={dt.image} fill alt="projects-card-image" draggable="false" />
                 </div>
