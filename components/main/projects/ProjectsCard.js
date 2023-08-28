@@ -132,20 +132,21 @@ const ProjectsCard = () => {
           <Draggable key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1} ref={dt.ref}>
             <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
               <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == cards.length ? 0 : dt.z + dt.z * 1}deg)` }}>
-                <div className="main-project-cards handle relative">
+                <div className="main-project-cards handle">
                   <Image src={dt.image} fill alt="projects-card-image" draggable="false" />
-                  <a target="_blank" href={dt.url} className="absolute bottom-0 m-3 text-white flex items-center gap-3 underline italic">
-                    Visit
-                    <div className="flex items-center">
-                      <Image src={"/visit-url.png"} width={10} height={10} />
-                    </div>
-                  </a>
                 </div>
                 <div className="footer-project-cards">
                   <div className="footer-container">
                     <div className="project-desc">
                       <h5>{dt.title}</h5>
                       <p>{dt.desc}</p>
+
+                      <a target="_blank" href={dt.url} className=" text-white/80 flex items-center gap-2 underline italic">
+                        <p>Visit</p>
+                        <div className="flex items-center">
+                          <Image src={"/visit-url.png"} width={10} height={10} />
+                        </div>
+                      </a>
                     </div>
                     <div className="footer-img-container">
                       <Image src={dt.barcode} fill alt="barcode" />
