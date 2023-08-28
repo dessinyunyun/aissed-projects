@@ -2,6 +2,7 @@ import Draggable from "react-draggable";
 import React, { useRef, useState } from "react";
 import "./projectscard.css";
 import Image from "next/image";
+
 const ProjectsCard = () => {
   const [cards, setCards] = useState([
     {
@@ -12,6 +13,7 @@ const ProjectsCard = () => {
       z: 1,
       defaultPosition: { x: 0, y: 0 },
       barcode: "/projects/mitsubishi-barcode.png",
+      url: "https://sales-mitsubishi-kendari.com/",
     },
     {
       image: "/projects/lentera-inovasi.jpg",
@@ -21,6 +23,7 @@ const ProjectsCard = () => {
       z: 2,
       defaultPosition: { x: 0, y: 0 },
       barcode: "/projects/lenterainovasi-barcode.png",
+      url: "https://lenterainovasi.co.id/",
     },
     {
       image: "/projects/SMS.jpg",
@@ -30,6 +33,7 @@ const ProjectsCard = () => {
       z: 3,
       defaultPosition: { x: 0, y: 0 },
       barcode: "/projects/SMS-barcode.png",
+      url: "https://saranamitrasulawesi.com/",
     },
     {
       image: "/projects/hnsi.jpg",
@@ -39,6 +43,7 @@ const ProjectsCard = () => {
       z: 4,
       defaultPosition: { x: 0, y: 0 },
       barcode: "/projects/hnsi-barcode.png",
+      url: "https://hnsisultra.com/",
     },
     {
       image: "/projects/todolist.jpg",
@@ -47,7 +52,28 @@ const ProjectsCard = () => {
       desc: "Organize tasks effortlessly with ToDoList.",
       z: 5,
       defaultPosition: { x: 0, y: 0 },
-      barcode: "/projects/hnsi-barcode.png",
+      barcode: "/projects/todolist-github.png",
+      url: "https://responsive-todolist.vercel.app/",
+    },
+    {
+      image: "/projects/admin-dashboard.jpg",
+      title: "Admin Dashboard",
+      ref: useRef(null),
+      desc: "Authentication, Item & Supplier Management.",
+      z: 6,
+      defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/admindashboard-barcode.png",
+      url: "https://github.com/dessinyunyun/market-place-mini",
+    },
+    {
+      image: "/projects/hotel.jpg",
+      title: "Booking Hotel",
+      ref: useRef(null),
+      desc: "Hotel Reservations.",
+      z: 7,
+      defaultPosition: { x: 0, y: 0 },
+      barcode: "/projects/hotel.png",
+      url: "https://github.com/dessinyunyun/hotel-booking-app",
     },
   ]);
 
@@ -106,8 +132,14 @@ const ProjectsCard = () => {
           <Draggable key={index} axis="x" handle=".handle" position={dt.defaultPosition} grid={[25, 25]} onStop={(e, data) => eventLogger(e, data, index)} scale={1} ref={dt.ref}>
             <div className="relative tes" style={{ transition: "all 0.3s", zIndex: `${dt.z}` }} ref={dt.ref}>
               <div className={`project-cards`} style={{ transform: `translate(-50%, -57%) rotate(${dt.z == cards.length ? 0 : dt.z + dt.z * 1}deg)` }}>
-                <div className="main-project-cards handle">
+                <div className="main-project-cards handle relative">
                   <Image src={dt.image} fill alt="projects-card-image" draggable="false" />
+                  <a target="_blank" href={dt.url} className="absolute bottom-0 m-3 text-white flex items-center gap-3 underline italic">
+                    Visit
+                    <div className="flex items-center">
+                      <Image src={"/visit-url.png"} width={10} height={10} />
+                    </div>
+                  </a>
                 </div>
                 <div className="footer-project-cards">
                   <div className="footer-container">
